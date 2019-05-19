@@ -1,5 +1,6 @@
 package sample
 
+import sample.BaseAssertions.assertThat
 import kotlin.test.Test
 
 class BaseAssertionsTest {
