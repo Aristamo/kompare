@@ -22,4 +22,11 @@ class BaseAssertionsTest {
         }
         throw AssertionError("No Assertion was thrown")
     }
+
+    @Test
+    fun `should compare some other values than numbers`() {
+        assertThat("This is a String").isEqualTo("This is a String")
+        assertThat(true).isEqualTo(true)
+        assertThat(0.01f).isEqualTo(0.01f)
+    }
 }
