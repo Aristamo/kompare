@@ -6,7 +6,7 @@ import kotlin.test.Test
 class BaseAssertionsTest {
 
     @Test
-    fun `equality should run trough`() {
+    fun `equality should occure if 1 and 1 are compared`() {
         assertThat(1).isEqualTo(1)
     }
 
@@ -21,14 +21,5 @@ class BaseAssertionsTest {
             throw AssertionError("Wrong Assertion is thrown, expected <${AssertionError::class.simpleName}> but was <${e::class.simpleName}>")
         }
         throw AssertionError("No Assertion was thrown")
-    }
-
-    @Test
-    fun `message should Equal the same message`() {
-        try {
-            assertThat(2).isEqualTo(1)
-        } catch (e: AssertionError) {
-            assertThat(e.message).isEqualTo("Expected <2> to be Equal to <2>, but was <1>")
-        }
     }
 }
