@@ -28,6 +28,21 @@ kotlin {
                 implementation kotlin('test-annotations-common')
             }
         }
+        jvmMain {
+            dependencies {
+                implementation kotlin('stdlib')
+            }
+        }
+        jvmTest {
+            dependencies {
+                implementation kotlin('test')
+                implementation kotlin('test-junit')
+            }
+        }
+        iosMain {
+        }
+        iosTest {
+        }
     }
 }
 
