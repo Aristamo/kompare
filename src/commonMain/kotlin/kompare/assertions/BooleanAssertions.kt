@@ -8,3 +8,10 @@ fun <T : Boolean?> Builder<T>.isTrue(): Builder<T> {
     }
     return this
 }
+
+fun <T: Boolean?> Builder<T>.isFalse(): Builder<T> {
+    if (this.value != false) {
+        throw AssertionError()
+    }
+    return this
+}
