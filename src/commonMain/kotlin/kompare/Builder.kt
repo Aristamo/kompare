@@ -1,6 +1,6 @@
 package kompare
 
-class Builder<T: Any?>(val value: T) {
+class Builder<T: Any?>(internal val value: T) {
 
     fun isEqualTo(comp: T): Builder<T> {
         if (value != comp) {
