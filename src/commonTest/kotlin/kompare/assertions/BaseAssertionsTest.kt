@@ -1,6 +1,5 @@
-package sample
+package kompare.assertions
 
-import sample.BaseAssertions.assertThat
 import kotlin.test.Test
 
 class BaseAssertionsTest {
@@ -11,7 +10,7 @@ class BaseAssertionsTest {
     }
 
     @Test
-    fun `should fail with AssertionError if it is not equal`() {
+    fun `should fail with an AssertionError if it is not equal`() {
         try {
             assertThat(2).isEqualTo(1)
         } catch (e: AssertionError) {
@@ -20,7 +19,7 @@ class BaseAssertionsTest {
         } catch (e: Throwable) {
             throw AssertionError("Wrong Assertion is thrown, expected <${AssertionError::class.simpleName}> but was <${e::class.simpleName}>")
         }
-        throw AssertionError("No Assertion was thrown")
+        throw AssertionError("No AssertionError was thrown")
     }
 
     @Test
