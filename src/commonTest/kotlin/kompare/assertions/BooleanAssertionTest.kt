@@ -1,5 +1,6 @@
 package kompare.assertions
 
+import catchAssertionError
 import kotlin.test.Test
 
 class BooleanAssertionTest {
@@ -11,14 +12,9 @@ class BooleanAssertionTest {
 
     @Test
     fun `isTrue() throws AssertionError if false is inserted`() {
-        try {
+        catchAssertionError {
             assertThat(false).isTrue()
-        } catch (e: AssertionError) {
-            return
-        } catch (e: Throwable) {
-            throw AssertionError("Wrong Exception is thrown, expected <${AssertionError::class.simpleName}> but was <${e::class.simpleName}>")
         }
-        throw AssertionError("No Exception is thrown")
     }
 
     @Test
@@ -28,14 +24,12 @@ class BooleanAssertionTest {
 
     @Test
     fun `isFalse() throws AssertionError if true is inserted`() {
-        try {
+        catchAssertionError {
             assertThat(true).isFalse()
-        } catch (e: AssertionError) {
-            return
-        } catch (e: Throwable) {
-            throw AssertionError("Wrong Exception is thrown, expected <${AssertionError::class.simpleName}> but was <${e::class.simpleName}>")
         }
-        throw AssertionError("No Exception is thrown")
     }
+
+
+
 
 }
